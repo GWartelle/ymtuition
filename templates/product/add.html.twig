@@ -23,6 +23,20 @@
             {{ form_errors(form.description) }}
         </div>
 
+
+        <div class="mb-3">
+            {{ form_label(form.shortDescription, 'Product Short Description') }}
+            {{ form_widget(form.shortDescription, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.shortDescription) }}
+        </div>
+
+
+        <div class="mb-3">
+            {{ form_label(form.quantity, 'Product Quantity') }}
+            {{ form_widget(form.quantity, {'attr': {'class': 'form-control'         }}) }}
+            {{ form_errors(form.quantity) }}
+        </div>
+
         <div class="mb-3">
             {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
         </div>
