@@ -15,6 +15,8 @@ final class CategoryController extends AbstractController
     #[Route('/category/add', name: 'app_category')]
     public function add(Request $request, EntityManagerInterface $entityManager): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Access denied : You need to be logged in to create a category.');
+
         $category = new Category();
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
